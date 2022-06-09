@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-// const uniqueValidator = require('mongoose-unique-validator');
- const { isEmail } = require('validator');
+const { isEmail } = require('validator');
 
 
 const userSchema = mongoose.Schema(
@@ -45,15 +44,5 @@ const userSchema = mongoose.Schema(
   }
   
 );
-
-
-
-
-// Applique ce validator au userSchema avant d'en faire un model unique et aussi  avoir des erreurs lisibles de la part de mongooseDB)
-// userSchema.plugin(uniqueValidator);
-
-// Ce plugin tire parti des middlewares de gestion des erreurs récemment introduits sur mongoose , il identifie avec succès le chemin (ou le champ) défaillant et la valeur correctement, et les ajoute dans le hachage des erreurs
-
-
 
 module.exports = mongoose.model('user',userSchema); 
